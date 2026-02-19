@@ -1,28 +1,38 @@
-# Documentação de mudanças e arquitetura (versão sem banco de dados)
+# 🎮 Bot de Apostas Discord
 
-## 1. Sem banco de dados
-- Todas as filas e partidas são mantidas em memória (resetam ao reiniciar)
-- Não há persistência, ranking ou histórico salvo
+## 📋 Visão Geral
+Bot desenvolvido para gerenciar apostas em partidas de Free Fire através do Discord.
 
-## 2. Estruturas em memória
-- `utils/memory_store.py` mantém filas e partidas:
-    - `queues = {guild_id: [user_id, ...]}`
-    - `matches = {match_id: {team1: [...], team2: [...], status: 'waiting'}}`
+## ⚙️ Características Técnicas
 
-## 3. Modularidade e handlers
-- Estrutura modular: commands/, events/, handlers/, config/, utils/
-- Handlers seguros para comandos, eventos, permissões e erros globais
-- Logging centralizado (utils/logger.py)
-- Uso correto de async/await, try/catch
-- Separação clara entre lógica e configuração
+### Armazenamento Volátil
+Sistema opera com dados em RAM - informações são perdidas ao reiniciar o bot.
 
-## 4. Como usar
-- Rode normalmente, sem dependências de banco
-- Para adicionar comandos/eventos, basta criar arquivos em commands/ ou events/
+### Organização do Código
+```
+├── commands/     → Comandos do bot
+├── events/       → Eventos Discord
+├── handlers/     → Processadores de requisições
+├── config/       → Configurações
+├── utils/        → Ferramentas auxiliares
+└── services/     → Lógica de negócio
+```
 
-## 5. Observação
-- Se precisar de persistência futura (ranking, histórico), basta adicionar um banco de dados.
+### Recursos Implementados
+- Sistema de filas para pareamento
+- Criação automática de canais de partida
+- Logs estruturados
+- Tratamento de erros global
+- Código assíncrono otimizado
 
----
+## 🚀 Execução
 
-Se quiser exemplos de comandos, eventos ou integração com APIs externas, só pedir!
+1. Configure o `.env` com seu token
+2. Instale dependências: `pip install -r requirements.txt`
+3. Execute: `python main.py`
+
+## 📝 Notas
+
+- Dados não persistem entre reinicializações
+- Extensível para adicionar banco de dados
+- Pronto para novos comandos e eventos
