@@ -1,0 +1,14 @@
+{
+  "embed_colors": {
+    "success": "#00FF00",
+    "error": "#FF0000",
+    "info": "#0000FF"
+  },
+  "taxa_fixa": 0.20,
+  "taxa_percentual": 0.05,
+  "timeout_confirmacao": 300,
+  "timeout_sala": 1800,
+  "valores_aposta": [1, 2, 3, 5, 10, 20, 50],
+  "formatos": ["1v1", "2v2", "3v3", "4v4"],
+  "categoria_salas": "Salas de Apostas"
+}
