@@ -3,3 +3,4 @@ sqlalchemy==2.0.0
 cryptography==43.0.0
 python-dotenv==1.0.0
 asyncio==3.4.3
+audioop-lts==0.2.2

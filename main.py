@@ -61,7 +61,7 @@ async def dynamic_status_task():
 
 # Carregamento seguro de comandos e eventos
 async def load_all(bot):
-    await load_commands(bot, os.path.join(os.path.dirname(__file__), "commands"))
+    await load_commands(bot, os.path.join(os.path.dirname(__file__), "cogs"))
     await load_events(bot, os.path.join(os.path.dirname(__file__), "events"))
     await setup_error_handler(bot)
 

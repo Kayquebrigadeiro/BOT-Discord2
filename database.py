@@ -1,5 +1,3 @@
-def connect():
-
 from utils.db_pool import get_conn, release_conn
 
 def setup():
